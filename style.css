@@ -49,6 +49,7 @@ body{
     border: 0;
     font-size: 26px;
     color: white;
+    cursor: pointer;
 }
 
 .circle button:focus{
@@ -65,6 +66,66 @@ body{
     transform-origin: top left;
 }
 
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav{
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+.nav ul{
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li{
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-100); 
+    transition: transform 0.4s ease-in-out;  
+}
+
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+nav ul li + li {
+    margin-left: 15px;
+    transform: translateX(-150%); 
+}
+
+nav ul li + li + li{
+    margin-left: 30px;
+    transform: translateX(-200%); 
+}
+
+/* translateX and translateY work like an X-Y axis -100 means it is going to the left 100 would mean its going to rotate to the right. */
+
 .content img{
     max-width: 100%;
+}
+
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.content h1{
+    margin: 0;
+}
+
+.content small{
+    color: #555;
+}
+
+.content p{
+    color: #444;
+    line-height: 1.5;
 }
